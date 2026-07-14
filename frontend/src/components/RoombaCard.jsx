@@ -1,3 +1,4 @@
+// dependencies
 import { Broom, BatteryFull, BatteryHigh, BatteryMedium, BatteryLow, BatteryWarning } from '@phosphor-icons/react';
 
 function BatteryIcon({ pct }) {
@@ -40,7 +41,7 @@ export function RoombaCard({ device, sendCommand }) {
 
       {device.status === 'docked' && (
         <button
-          onClick={() => sendCommand(device.id, 'start')}
+          onClick={() => sendCommand(device.id, 'clean')}
           className="shrink-0 text-[11px] font-semibold text-[#6B6860] bg-[#F5F4F0] border border-[#E5E3DC] rounded-lg px-2.5 py-1 cursor-pointer hover:bg-[#ECEAE3] active:scale-[0.97] transition-all duration-150"
         >
           Clean

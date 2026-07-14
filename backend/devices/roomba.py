@@ -10,7 +10,7 @@ class RoombaAdapter:
         
         updates = {}
 
-        if command == "start":
+        if command == "clean":
             updates = {"status": "cleaning"}
         elif command == "stop":
             updates = {"status": "docked"}
