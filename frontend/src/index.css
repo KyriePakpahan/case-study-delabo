@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Lumos-inspired warm neutral palette */
+  --color-canvas:        #F2F1ED;
+  --color-surface:       #FFFFFF;
+  --color-surface-warm:  #FAF9F6;
+  --color-surface-muted: #F5F4F0;
+  --color-border:        #E5E3DC;
+  --color-border-strong: #D4D1C8;
+
+  /* Text */
+  --color-ink:           #1C1B18;
+  --color-ink-secondary: #6B6860;
+  --color-ink-muted:     #A8A69F;
+
+  /* Brand accent — Nakayama red-orange */
+  --color-brand:         #E8361E;
+  --color-brand-light:   #FFF0EE;
+  --color-brand-orange:  #F5820A;
+  --color-brand-orange-light: #FFF6E8;
+
+  /* Semantic pastel spots */
+  --color-green-bg:  #EDFAED;
+  --color-green-txt: #2D7B35;
+  --color-amber-bg:  #FFF8E8;
+  --color-amber-txt: #9B6800;
+  --color-blue-bg:   #EDF4FF;
+  --color-blue-txt:  #1A5FB4;
+
+  /* Fonts */
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-sans:    'DM Sans', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.10); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.18); }
+
+/* ── Animations ── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.8); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+.pulse    { animation: pulse-dot 2.4s infinite ease-in-out; }
+.fade-up  { animation: fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.bar-anim { transform-origin: bottom; animation: bar-grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Utility: delay helpers ── */
+.d-80  { animation-delay: 80ms; }
+.d-160 { animation-delay: 160ms; }
+.d-240 { animation-delay: 240ms; }
+.d-320 { animation-delay: 320ms; }
