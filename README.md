@@ -1,4 +1,4 @@
-# Hospital Ward 3D Digital Twin Iotr Dashboard
+# Hospital Ward 3D Digital Twin Iot Dashboard
 
 A full-stack prototype that combines a Python FastAPI backend with a React + Three.js frontend to deliver a real-time, interactive 3D Digital Twin of a hospital ward. Device control commands are dispatched through a REST API and state updates are pushed to all connected clients via WebSocket.
 
